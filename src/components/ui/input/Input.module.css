@@ -1,0 +1,47 @@
+.inputContainer {
+    position: relative;
+    margin-top: 15px;
+}
+
+.small {
+    width: 20%;
+}
+
+.middle {
+    width: 30%;
+}
+
+.large {
+    width: 100%;
+}
+
+.input {
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-bottom: 1px solid darkgray;
+    background-color: transparent;
+    outline: none;
+    transition: .5s;
+    padding: 5px 0;
+}
+
+.input:focus {
+    border-bottom: 1px solid white;
+}
+
+.input:focus ~ .inputLabel,
+.input:not(:placeholder-shown) ~ .inputLabel {
+    top: -16px;
+    font-size: 14px;
+    opacity: .6;
+}
+
+.inputLabel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: .2s;
+    user-select: none;
+}

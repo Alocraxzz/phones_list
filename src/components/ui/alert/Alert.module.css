@@ -1,0 +1,26 @@
+.alert {
+    display: block;
+    background-color: #3a3f47;
+    /* border: 1px solid #3a3f47; */
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 20px;
+}
+
+.info {
+    display: block;
+    background-color: #cfe2ff;
+    border: 1px solid #85b6ff;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 20px;
+}
+
+.success {
+    display: block;
+    background-color: #cfe2ff;
+    border: 1px solid #85b6ff;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 20px;
+}

@@ -1,9 +1,14 @@
+* {
+  font-family: monospace;
+}
+
 .App {
+  font-size: calc(10px + 1vmin);
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
@@ -18,9 +23,6 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
