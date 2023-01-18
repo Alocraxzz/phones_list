@@ -3,6 +3,7 @@ import { Form } from '../Form';
 import { Input } from '../../ui/input/Input';
 import { Button } from '../../ui/button/Button';
 import { Alert } from '../../ui/alert/Alert';
+import { act } from 'react-dom/test-utils';
 
 export const PhoneForm = ({ transferPhone, ...props }) => {
     const [message, setMessage] = useState('');
@@ -36,9 +37,14 @@ export const PhoneForm = ({ transferPhone, ...props }) => {
             clearForm();
         } else {
             if (!validateContactName(newPhone.name)) {
-                setMessage('The name must contain at least one character and no more than 30');
+                act(() => {
+                    setMessage('The name must contain at least one character and no more than 30');
+                });
             } else if (!validateContactNumber(newPhone.number)) {
-                setMessage('The number must contain at least two digits and no more than 18');
+                act(() => {
+                    setMessage('The number must contain at least two digits and no more than 18');
+                });
+                
             }
         }
     }
