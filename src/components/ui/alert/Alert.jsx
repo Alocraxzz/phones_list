@@ -1,9 +1,9 @@
 import React from "react";
 import classes from './Alert.module.css';
 
-export const Alert = ({ children }) => {
+export const Alert = ({ children, ...props }) => {
     return (
-        <div className={ classes.alert }>
+        <div {...props} className={ classes.alert }>
             { children }
         </div>
     )

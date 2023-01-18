@@ -14,7 +14,7 @@ export const PhoneForm = ({ transferPhone, ...props }) => {
     }
 
     const validateContactNumber = (number) => {
-        return number.length > 1
+        return number.length > 2
             && number.length < 18;
     }
 
@@ -37,8 +37,7 @@ export const PhoneForm = ({ transferPhone, ...props }) => {
         } else {
             if (!validateContactName(newPhone.name)) {
                 setMessage('The name must contain at least one character and no more than 30');
-            }
-            if (!validateContactNumber(newPhone.number)) {
+            } else if (!validateContactNumber(newPhone.number)) {
                 setMessage('The number must contain at least two digits and no more than 18');
             }
         }
@@ -55,11 +54,13 @@ export const PhoneForm = ({ transferPhone, ...props }) => {
     }
     
     return (
-        <Form {...props}>
+        <Form {...props} data-testid="phoneForm">
             <Input id="contactName"
                 value={phone.name}
                 onChange={event => setPhone({ ...phone, name: event.target.value })}
                 type="text"
+                aria-label="phonesFormInput"
+                data-testid="contactNameInput"
                 required
             >
                 Name
@@ -68,12 +69,17 @@ export const PhoneForm = ({ transferPhone, ...props }) => {
                 value={phone.number}
                 onChange={event => setPhone({ ...phone, number: event.target.value })}
                 type="number"
+                aria-label="phonesFormInput"
+                data-testid="contactNumberInput"
                 required
             >
                 Number
             </Input>
-            <Button onClick={addPhone}>
-                Submit</Button>
+            <Button onClick={addPhone}
+                data-testid="phonesFormButton"
+            >
+                Submit
+            </Button>
             <Message message={message} />
         </Form>
     );

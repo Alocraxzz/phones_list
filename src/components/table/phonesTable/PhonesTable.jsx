@@ -3,10 +3,10 @@ import { Table } from '../Table';
 import { Alert } from '../../ui/alert/Alert';
 import { Button } from '../../ui/button/Button';
 
-export const PhonesTable = ({ phones, remove, search, ...props }) => {
-    if (search) {
+export const PhonesTable = ({ phones, remove, search, searchCallBack, ...props }) => {
+    if (searchCallBack && search) {
         phones = phones.filter(
-            (phone) => search(phone)
+            (phone) => searchCallBack(phone, search)
         );
     }
 
@@ -24,11 +24,17 @@ export const PhonesTable = ({ phones, remove, search, ...props }) => {
                 <tbody>
                     {phones.map((phone, index) => {
                         return (
-                            <tr key={phone.id}>
-                                <td>{index + 1}</td>
-                                <td>{phone.name}</td>
-                                <td>+{phone.number}</td>
-                                <td>
+                            <tr key={phone.id} data-testid="contactRecord">
+                                <td data-testid="contactId">
+                                    {index + 1}
+                                </td>
+                                <td data-testid="contactName">
+                                    {phone.name}
+                                </td>
+                                <td data-testid="contactNumber">
+                                    {phone.number}
+                                </td>
+                                <td data-testid="removeContactButton">
                                     <Button onClick={() => remove(phone)}
                                         style={{ margin: 0 }}
                                     >

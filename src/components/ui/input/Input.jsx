@@ -6,7 +6,6 @@ export const Input = ({ children, ...props }) => {
         <div className={ classes.inputContainer }>
             <input { ...props } 
                 placeholder=" "
-                aria-label="input"
                 className={[classes.input, classes.large].join(' ')} 
             />
             <label className={ classes.inputLabel } htmlFor={ props.id }>
