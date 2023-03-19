@@ -23,7 +23,6 @@ export const PhoneForm = ({ transferPhone, ...props }) => {
 
     const clearForm = () => {
         setPhone({ id: '', name: '', number: '' });
-
         setMessage('');
     }
 
@@ -44,7 +43,6 @@ export const PhoneForm = ({ transferPhone, ...props }) => {
                 act(() => {
                     setMessage('The number must contain at least two digits and no more than 18');
                 });
-                
             }
         }
     }

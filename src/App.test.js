@@ -70,7 +70,6 @@ describe('Message', () => {
         nameInput = screen.getByTestId('contactNameInput');
         numberInput = screen.getByTestId('contactNumberInput');
         submitBtn = screen.getByTestId("phonesFormButton");
-
     });
 
     it("renders error message for contact name input in phone form", () => {
