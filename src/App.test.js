@@ -8,9 +8,7 @@ import { shallow, mount } from "enzyme";
 describe('PhoneForm', () => {
 
     beforeEach(() => {
-        act(() => {
-            render(<PhoneForm />);
-        });
+        render(<PhoneForm />);
     });
 
     it('renders phone form', () => {
